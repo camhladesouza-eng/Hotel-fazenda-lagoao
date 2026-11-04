@@ -876,6 +876,307 @@ footer a:hover {
     bottom: 16px;
   }
 }
+
+/* ====================================
+   HOTEL FAZENDA LAGOÃO
+   IDENTIDADE VISUAL OFICIAL
+   CINZA OLIVA + VERDE + BRANCO
+==================================== */
+
+:root {
+  --verde: #606158;
+  --verde2: #45483F;
+  --dourado: #A8CC43;
+  --creme: #F7F8F3;
+  --areia: #E9EDE3;
+  --branco: #FFFFFF;
+  --texto: #40433C;
+}
+
+/* FUNDO GERAL */
+
+body {
+  background: var(--creme);
+  color: var(--texto);
+}
+
+/* CABEÇALHO */
+
+header {
+  border-bottom: 1px solid
+    rgba(255,255,255,.25);
+}
+
+.brand-name {
+  color: #FFFFFF;
+}
+
+.brand-name small {
+  color: #DDE8CA;
+}
+
+.navlinks a {
+  color: #FFFFFF;
+}
+
+.navlinks a:hover {
+  color: #A8CC43;
+}
+
+.navlinks .nav-reserve {
+  border-color: #A8CC43;
+  color: #A8CC43;
+}
+
+/* CAPA PRINCIPAL */
+
+.hero {
+  background: linear-gradient(
+    125deg,
+    #40433C,
+    #858B7A
+  );
+}
+
+.hero::after {
+  background: linear-gradient(
+    90deg,
+    rgba(38,42,35,.87),
+    rgba(65,70,58,.28)
+  );
+}
+
+.hero h1 {
+  color: #FFFFFF;
+}
+
+.hero h1 em {
+  color: #B8D86D;
+}
+
+.hero-description {
+  color: #F1F3EA;
+}
+
+.hero .eyebrow {
+  color: #B8D86D;
+}
+
+/* BOTÕES */
+
+.btn-gold {
+  background: #A8CC43;
+  color: #30362A;
+  border-color: #A8CC43;
+}
+
+.btn-gold:hover {
+  background: #BCD971;
+  color: #30362A;
+}
+
+.btn-dark {
+  background: #606158;
+  color: #FFFFFF;
+}
+
+.btn-dark:hover {
+  background: #45483F;
+}
+
+.btn-outline {
+  border-color: #F7F8F3;
+  color: #FFFFFF;
+}
+
+/* FAIXA PRINCIPAL */
+
+.welcome-strip {
+  background: #606158;
+  color: #FFFFFF;
+}
+
+/* TÍTULOS E TEXTOS */
+
+.section-title {
+  color: #50534B;
+}
+
+.eyebrow {
+  color: #708B32;
+}
+
+.section-text {
+  color: #62675E;
+}
+
+/* QUEM SOMOS */
+
+#sobre {
+  background: #FFFFFF;
+}
+
+.about-quote {
+  color: #50534B;
+  border-left-color: #A8CC43;
+}
+
+/* IMAGENS E ESPAÇOS PARA FOTOS */
+
+.image-frame {
+  background: linear-gradient(
+    135deg,
+    #939C85,
+    #50584C
+  );
+}
+
+.photo-placeholder {
+  color: #FFFFFF;
+}
+
+/* EXPERIÊNCIAS */
+
+.experience {
+  background: #E9EDE3;
+}
+
+.experience-card {
+  background: #FFFFFF;
+  border-bottom: 3px solid #A8CC43;
+}
+
+.experience-icon {
+  color: #78983A;
+}
+
+.experience-card h3 {
+  color: #50534B;
+}
+
+.experience-card p {
+  color: #62675E;
+}
+
+/* HOSPEDAGEM */
+
+#hospedagem {
+  background: #F7F8F3;
+}
+
+/* GALERIA */
+
+.gallery {
+  background: #55584F;
+}
+
+.gallery .section-title {
+  color: #FFFFFF;
+}
+
+.gallery .eyebrow {
+  color: #B8D86D;
+}
+
+.gallery .section-text {
+  color: #E2E8DC;
+}
+
+.gallery-label {
+  color: #FFFFFF;
+}
+
+/* RESERVAS */
+
+.reservations {
+  background: #E9EDE3;
+}
+
+.reservation-box {
+  background: #FFFFFF;
+  border-top: 4px solid #A8CC43;
+}
+
+.reservation-box h3 {
+  color: #50534B;
+}
+
+.reservation-box .field label {
+  color: #50534B;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #A8CC43;
+}
+
+/* LOCALIZAÇÃO */
+
+.location-section {
+  background: #F7F8F3;
+}
+
+.location-card {
+  background: #606158;
+}
+
+.location-card h3 {
+  color: #FFFFFF;
+}
+
+.location-card .pin {
+  color: #B8D86D;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: #373A33;
+  color: #FFFFFF;
+}
+
+footer h4 {
+  color: #B8D86D;
+}
+
+footer a {
+  color: #E4E8DE;
+}
+
+footer a:hover {
+  color: #B8D86D;
+}
+
+.footer-bottom {
+  color: #CDD5C8;
+}
+
+/* MENU NO CELULAR */
+
+@media (max-width: 900px) {
+  .navlinks {
+    background: #45483F;
+  }
+}
+
+/* ACABAMENTO PREMIUM */
+
+.btn,
+.experience-card,
+.image-frame {
+  transition: all .3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px
+    rgba(64,67,60,.10);
+}
+
+::selection {
+  background: #A8CC43;
+  color: #30362A;
+}
 </style>
 </head>
 
@@ -889,7 +1190,7 @@ footer a:hover {
     <a href="#inicio" class="brand">
       <img
         class="brand-logo"
-        src="fotos/logo.png"
+        src="logo.png"
         alt="Logo Hotel Fazenda Lagoão"
         onload="this.style.display='block'"
         onerror="this.style.display='none'"
