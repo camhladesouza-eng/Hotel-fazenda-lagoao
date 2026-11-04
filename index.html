@@ -1,0 +1,1644 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17261e">
+
+<title>Hotel Fazenda Lagoão | Hospedagem e Natureza</title>
+
+<meta name="description" content="Conheça o Hotel Fazenda Lagoão, em São João da Lagoa, Minas Gerais. Hospedagem, natureza, descanso e momentos especiais.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #172b21;
+  --verde2: #263e30;
+  --dourado: #b99b62;
+  --creme: #f7f4ed;
+  --areia: #ebe5d9;
+  --branco: #ffffff;
+  --texto: #333b35;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--creme);
+  color: var(--texto);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dourado);
+  margin-bottom: 17px;
+}
+
+.section-title {
+  font-size: clamp(43px, 5vw, 65px);
+  margin-bottom: 24px;
+}
+
+.section-text {
+  font-size: 15px;
+  line-height: 2;
+  color: #687067;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 29px;
+  border: 1px solid transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-gold {
+  background: var(--dourado);
+  color: #17251c;
+}
+
+.btn-outline {
+  color: white;
+  border-color: rgba(255,255,255,.7);
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--verde);
+}
+
+.btn-dark {
+  color: white;
+  background: var(--verde);
+}
+
+/* CABEÇALHO */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,.17);
+}
+
+.navbar {
+  width: min(1250px, 92%);
+  margin: auto;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: none;
+}
+
+.brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  line-height: .9;
+}
+
+.brand-name small {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  margin-top: 9px;
+  text-align: center;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navlinks a {
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: .7px;
+  transition: .3s;
+}
+
+.navlinks a:hover {
+  color: var(--dourado);
+}
+
+.navlinks .nav-reserve {
+  border: 1px solid var(--dourado);
+  color: var(--dourado);
+  padding: 12px 18px;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 29px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  height: 94vh;
+  max-height: 1050px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(125deg, #13261d, #53634c);
+  color: white;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.hero-image.loaded {
+  opacity: .75;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8,22,15,.85),
+    rgba(8,22,15,.28)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: clamp(64px, 8vw, 110px);
+  max-width: 850px;
+  margin-bottom: 25px;
+}
+
+.hero h1 em {
+  font-weight: 400;
+  color: #dfc79a;
+}
+
+.hero-description {
+  max-width: 500px;
+  font-size: 15px;
+  color: #ecece5;
+  margin-bottom: 38px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-location {
+  position: absolute;
+  z-index: 2;
+  bottom: 45px;
+  left: 5%;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #eee8dc;
+}
+
+/* FAIXA DE BOAS-VINDAS */
+
+.welcome-strip {
+  background: var(--verde);
+  color: #e9e4d8;
+  padding: 26px 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* QUEM SOMOS */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.about-photo {
+  height: 580px;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #52684d, #22392d);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  transition: transform .5s;
+}
+
+.image-frame.has-image img {
+  display: block;
+}
+
+.image-frame:hover img {
+  transform: scale(1.04);
+}
+
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 25px;
+  color: #e4dac7;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.image-frame.has-image .photo-placeholder {
+  display: none;
+}
+
+.about-content .section-text {
+  margin-bottom: 21px;
+}
+
+.about-quote {
+  border-left: 2px solid var(--dourado);
+  padding-left: 22px;
+  margin-top: 32px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  color: var(--verde);
+}
+
+/* EXPERIÊNCIA */
+
+.experience {
+  background: var(--areia);
+}
+
+.center {
+  text-align: center;
+}
+
+.center .section-text {
+  max-width: 650px;
+  margin: auto;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 55px;
+}
+
+.experience-card {
+  background: var(--creme);
+  padding: 47px 32px;
+  text-align: center;
+  min-height: 285px;
+}
+
+.experience-icon {
+  font-size: 31px;
+  color: var(--dourado);
+  margin-bottom: 22px;
+}
+
+.experience-card h3 {
+  font-size: 33px;
+  margin-bottom: 15px;
+  color: var(--verde);
+}
+
+.experience-card p {
+  font-size: 13px;
+  color: #71766d;
+}
+
+/* HOSPEDAGEM */
+
+.stay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.stay-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stay-images .image-frame {
+  height: 390px;
+}
+
+.stay-images .image-frame:nth-child(2) {
+  margin-top: 40px;
+}
+
+.stay-content .section-text {
+  margin-bottom: 29px;
+}
+
+/* GALERIA */
+
+.gallery {
+  background: var(--verde);
+  color: white;
+}
+
+.gallery .section-title {
+  color: #f5efe2;
+}
+
+.gallery .section-text {
+  color: #c6d0c5;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 265px;
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.gallery-grid .image-frame:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-grid .image-frame {
+  cursor: pointer;
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 22px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,.64));
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  pointer-events: none;
+}
+
+/* RESERVAS */
+
+.reservations {
+  background: var(--areia);
+}
+
+.reservation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.reservation-info .section-text {
+  margin-bottom: 25px;
+}
+
+.reservation-box {
+  background: var(--creme);
+  padding: 45px;
+  box-shadow: 0 20px 50px rgba(20,30,20,.07);
+}
+
+.reservation-box h3 {
+  font-size: 36px;
+  color: var(--verde);
+  margin-bottom: 9px;
+}
+
+.reservation-box > p {
+  color: #6e756d;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  margin-bottom: 19px;
+}
+
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--verde);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  background: white;
+  border: 1px solid #dedbd2;
+  border-radius: 0;
+  color: #333;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--dourado);
+}
+
+.reservation-box .btn {
+  width: 100%;
+}
+
+.form-note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: #777c73;
+  text-align: center;
+}
+
+/* LOCALIZAÇÃO */
+
+.location-section {
+  background: var(--creme);
+}
+
+.location-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.location-card {
+  padding: 65px 40px;
+  text-align: center;
+  background: var(--verde2);
+  color: white;
+}
+
+.location-card .pin {
+  font-size: 35px;
+  color: var(--dourado);
+  margin-bottom: 15px;
+}
+
+.location-card h3 {
+  font-size: 43px;
+  margin-bottom: 12px;
+}
+
+.location-card p {
+  font-size: 13px;
+  color: #d1d9cc;
+  margin-bottom: 26px;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: #101e17;
+  color: #eee8dc;
+  padding: 70px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 55px;
+  padding-bottom: 65px;
+}
+
+.footer-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #aab7aa;
+  max-width: 350px;
+}
+
+footer h4 {
+  color: var(--dourado);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+footer a {
+  display: block;
+  color: #c2ccc0;
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+footer a:hover {
+  color: var(--dourado);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 22px;
+  text-align: center;
+  font-size: 11px;
+  color: #9bada0;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 40;
+  right: 24px;
+  bottom: 25px;
+  background: #25d366;
+  color: white;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,.23);
+  transition: .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.09);
+}
+
+.whatsapp-float svg {
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+}
+
+/* VISUALIZAÇÃO DAS FOTOS */
+
+.lightbox {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background: rgba(0,0,0,.94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  width: auto;
+  max-width: 95%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+}
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    right: 0;
+    background: var(--verde);
+    flex-direction: column;
+    padding: 30px;
+    gap: 23px;
+    align-items: stretch;
+  }
+
+  .navlinks.active {
+    display: flex;
+  }
+
+  .navlinks a {
+    text-align: center;
+  }
+
+  .about-grid,
+  .stay-grid,
+  .reservation-grid,
+  .location-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .navbar {
+    min-height: 80px;
+  }
+
+  .navlinks {
+    top: 80px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .hero {
+    min-height: 680px;
+    height: 88svh;
+  }
+
+  .hero h1 {
+    font-size: clamp(57px, 12vw, 76px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-location {
+    bottom: 25px;
+  }
+
+  .section-title {
+    font-size: 45px;
+  }
+
+  .about-photo {
+    height: 400px;
+  }
+
+  .stay-images {
+    gap: 10px;
+  }
+
+  .stay-images .image-frame {
+    height: 275px;
+  }
+
+  .stay-images .image-frame:nth-child(2) {
+    margin-top: 25px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 190px;
+    gap: 9px;
+  }
+
+  .gallery-grid .image-frame:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 240px;
+  }
+
+  .gallery-label {
+    font-size: 22px;
+    padding: 28px 13px 12px;
+  }
+
+  .reservation-box {
+    padding: 30px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .location-card {
+    padding: 50px 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    right: 15px;
+    bottom: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU PRINCIPAL -->
+
+<header>
+  <nav class="navbar">
+
+    <a href="#inicio" class="brand">
+      <img
+        class="brand-logo"
+        src="fotos/logo.png"
+        alt="Logo Hotel Fazenda Lagoão"
+        onload="this.style.display='block'"
+        onerror="this.style.display='none'"
+      >
+
+      <span class="brand-name">
+        Hotel Fazenda Lagoão
+        <small>HOSPEDAGEM & NATUREZA</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="navlinks">
+      ☰
+    </button>
+
+    <div class="navlinks" id="navlinks">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Quem somos</a>
+      <a href="#hospedagem">Hospedagem</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#reservas" class="nav-reserve">RESERVAR AGORA</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- CAPA DO SITE -->
+
+<section class="hero" id="inicio">
+
+  <img class="hero-image"
+    src="fotos/capa.jpg"
+    alt="Paisagem do Hotel Fazenda Lagoão"
+    onload="this.classList.add('loaded')"
+    onerror="this.style.display='none'">
+
+  <div class="container hero-content">
+
+    <p class="eyebrow">Hotel Fazenda Lagoão • Minas Gerais</p>
+
+    <h1>
+      Seu refúgio<br>
+      em meio à<br>
+      <em>natureza.</em>
+    </h1>
+
+    <p class="hero-description">
+      Um convite para desacelerar, respirar novos ares
+      e viver momentos especiais em um lugar onde
+      a tranquilidade encontra a natureza.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#reservas" class="btn btn-gold">
+        CONSULTAR HOSPEDAGEM
+      </a>
+
+      <a href="#sobre" class="btn btn-outline">
+        CONHEÇA NOSSO HOTEL
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-location">
+    São João da Lagoa • Minas Gerais
+  </div>
+
+</section>
+
+<div class="welcome-strip">
+  Natureza &nbsp; ✦ &nbsp; Descanso &nbsp; ✦ &nbsp; Momentos especiais
+</div>
+
+<!-- QUEM SOMOS -->
+
+<section class="section" id="sobre">
+
+  <div class="container about-grid">
+
+    <div class="image-frame about-photo">
+      <img src="fotos/hotel.jpg"
+        alt="Vista do Hotel Fazenda Lagoão">
+
+      <div class="photo-placeholder">
+        FOTO DO HOTEL
+      </div>
+    </div>
+
+    <div class="about-content">
+
+      <p class="eyebrow">Bem-vindo ao nosso refúgio</p>
+
+      <h2 class="section-title">
+        Um lugar para viver
+        o que realmente importa.
+      </h2>
+
+      <p class="section-text">
+        Localizado no município de São João da Lagoa,
+        em Minas Gerais, o Hotel Fazenda Lagoão
+        é um convite para quem deseja se aproximar
+        da natureza e aproveitar momentos de descanso.
+      </p>
+
+      <p class="section-text">
+        Aqui, a proposta é valorizar as experiências
+        simples e especiais: compartilhar bons momentos,
+        contemplar a paisagem e criar memórias com
+        pessoas queridas.
+      </p>
+
+      <div class="about-quote">
+        "Seu lugar de paz em meio à natureza."
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIÊNCIAS -->
+
+<section class="section experience" id="experiencias">
+
+  <div class="container">
+
+    <div class="center">
+      <p class="eyebrow">Viva essa experiência</p>
+
+      <h2 class="section-title">
+        Mais do que uma hospedagem.
+      </h2>
+
+      <p class="section-text">
+        Um destino para desacelerar, compartilhar
+        momentos e aproveitar tudo o que a vida
+        perto da natureza pode proporcionar.
+      </p>
+    </div>
+
+    <div class="experience-grid">
+
+      <div class="experience-card">
+        <div class="experience-icon">✦</div>
+        <h3>Hospedagem</h3>
+        <p>
+          Um convite para sair da rotina e aproveitar
+          dias de tranquilidade em um ambiente
+          cercado pela natureza.
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <div class="experience-icon">☀</div>
+        <h3>Lazer & Natureza</h3>
+        <p>
+          Paisagens, ar livre e momentos para
+          contemplar a beleza e a serenidade
+          da vida no campo.
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <div class="experience-icon">❖</div>
+        <h3>Eventos Especiais</h3>
+        <p>
+          Um cenário acolhedor para compartilhar
+          ocasiões especiais. Consulte nossa equipe
+          sobre as possibilidades.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOSPEDAGEM -->
+
+<section class="section" id="hospedagem">
+
+  <div class="container stay-grid">
+
+    <div class="stay-content">
+
+      <p class="eyebrow">Sua próxima pausa começa aqui</p>
+
+      <h2 class="section-title">
+        Descubra o prazer
+        de se hospedar
+        junto à natureza.
+      </h2>
+
+      <p class="section-text">
+        Troque o movimento do dia a dia por uma
+        experiência de descanso e conexão
+        com o ambiente ao seu redor.
+      </p>
+
+      <p class="section-text">
+        Entre em contato para conhecer nossas
+        opções de acomodação, consultar
+        disponibilidade e planejar sua estadia.
+      </p>
+
+      <a href="#reservas" class="btn btn-dark">
+        CONSULTAR DISPONIBILIDADE
+      </a>
+
+    </div>
+
+    <div class="stay-images">
+
+      <div class="image-frame">
+        <img src="fotos/quarto1.jpg"
+          alt="Foto de acomodação do hotel">
+        <div class="photo-placeholder">FOTO DO QUARTO</div>
+      </div>
+
+      <div class="image-frame">
+        <img src="fotos/quarto2.jpg"
+          alt="Outra foto das acomodações">
+        <div class="photo-placeholder">FOTO DA ACOMODAÇÃO</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALERIA DE FOTOS -->
+
+<section class="section gallery" id="galeria">
+
+  <div class="container">
+
+    <div class="center">
+      <p class="eyebrow">Conheça nosso espaço</p>
+
+      <h2 class="section-title">
+        Momentos que inspiram.
+      </h2>
+
+      <p class="section-text">
+        Descubra um pouco do cenário e das experiências
+        que fazem parte do Hotel Fazenda Lagoão.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/piscina.jpg" alt="Piscina do hotel">
+        <div class="photo-placeholder">FOTO DA PISCINA</div>
+        <div class="gallery-label">Piscina & Lazer</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/natureza.jpg" alt="Natureza">
+        <div class="photo-placeholder">FOTO DA NATUREZA</div>
+        <div class="gallery-label">Natureza</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/gastronomia.jpg" alt="Gastronomia">
+        <div class="photo-placeholder">FOTO DE GASTRONOMIA</div>
+        <div class="gallery-label">Sabores</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/cachoeira.jpg" alt="Cachoeira">
+        <div class="photo-placeholder">FOTO DA CACHOEIRA</div>
+        <div class="gallery-label">Paisagens</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/experiencias.jpg" alt="Experiências">
+        <div class="photo-placeholder">FOTO DE EXPERIÊNCIAS</div>
+        <div class="gallery-label">Memórias especiais</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/eventos.jpg" alt="Espaço para eventos">
+        <div class="photo-placeholder">FOTO DE EVENTOS</div>
+        <div class="gallery-label">Eventos</div>
+      </div>
+
+      <div class="image-frame gallery-item">
+        <img src="fotos/vista.jpg" alt="Vista do hotel">
+        <div class="photo-placeholder">FOTO DA VISTA</div>
+        <div class="gallery-label">Nosso refúgio</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RESERVAS PELO WHATSAPP -->
+
+<section class="section reservations" id="reservas">
+
+  <div class="container reservation-grid">
+
+    <div class="reservation-info">
+
+      <p class="eyebrow">Planeje sua estadia</p>
+
+      <h2 class="section-title">
+        Sua próxima experiência
+        começa aqui.
+      </h2>
+
+      <p class="section-text">
+        Escolha as datas desejadas e envie uma
+        solicitação diretamente para nossa equipe
+        pelo WhatsApp.
+      </p>
+
+      <p class="section-text">
+        Teremos prazer em informar sobre
+        disponibilidade, acomodações e condições
+        de hospedagem.
+      </p>
+
+    </div>
+
+    <div class="reservation-box">
+
+      <h3>Solicite sua reserva</h3>
+
+      <p>
+        Preencha os dados para consultar
+        disponibilidade.
+      </p>
+
+      <form id="bookingForm">
+
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome"
+            placeholder="Nome completo" required>
+        </div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="entrada">Check-in</label>
+            <input type="date" id="entrada" required>
+          </div>
+
+          <div class="field">
+            <label for="saida">Check-out</label>
+            <input type="date" id="saida" required>
+          </div>
+
+        </div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="adultos">Adultos</label>
+            <select id="adultos">
+              <option value="1">1 adulto</option>
+              <option value="2" selected>2 adultos</option>
+              <option value="3">3 adultos</option>
+              <option value="4">4 adultos</option>
+              <option value="5 ou mais">5 ou mais</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="criancas">Crianças</label>
+            <select id="criancas">
+              <option value="0">Nenhuma</option>
+              <option value="1">1 criança</option>
+              <option value="2">2 crianças</option>
+              <option value="3">3 crianças</option>
+              <option value="4 ou mais">4 ou mais</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-dark">
+          CONSULTAR PELO WHATSAPP
+        </button>
+
+        <div class="form-note">
+          Solicitação de disponibilidade.
+          A reserva depende de confirmação do hotel.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- LOCALIZAÇÃO -->
+
+<section class="section location-section" id="localizacao">
+
+  <div class="container location-layout">
+
+    <div>
+
+      <p class="eyebrow">Onde estamos</p>
+
+      <h2 class="section-title">
+        Seu destino de descanso
+        em Minas Gerais.
+      </h2>
+
+      <p class="section-text">
+        O Hotel Fazenda Lagoão está localizado
+        no município de São João da Lagoa,
+        Minas Gerais.
+      </p>
+
+      <p class="section-text" style="margin-top:15px">
+        Consulte nossa localização e entre em contato
+        para planejar sua visita.
+      </p>
+
+    </div>
+
+    <div class="location-card">
+
+      <div class="pin">⌖</div>
+
+      <h3>Hotel Fazenda Lagoão</h3>
+
+      <p>São João da Lagoa • MG</p>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Hotel+Fazenda+Lagoao+Sao+Joao+da+Lagoa+MG"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-gold">
+        VER NO GOOGLE MAPS
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          Hotel Fazenda<br>Lagoão
+        </div>
+
+        <p>
+          Seu lugar de paz em meio à natureza.
+          Viva momentos especiais e descubra
+          o prazer de desacelerar.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Quem somos</a>
+        <a href="#hospedagem">Hospedagem</a>
+        <a href="#galeria">Galeria de fotos</a>
+        <a href="#reservas">Reservas</a>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+
+        <a href="https://wa.me/5538999831112"
+          target="_blank" rel="noopener noreferrer">
+          WhatsApp: (38) 99983-1112
+        </a>
+
+        <a href="https://www.instagram.com/hotelfazendalagoao/"
+          target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+
+        <a href="#localizacao">
+          São João da Lagoa, MG
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Hotel Fazenda Lagoão.
+      Todos os direitos reservados.
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+
+<a
+  href="https://wa.me/5538999831112?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20hospedagem."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-float"
+  aria-label="Conversar pelo WhatsApp">
+
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 .8A15.1 15.1 0 0 0 3 23.6L1 31l7.6-2A15.1 15.1 0 1 0 16 .8zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.3 12.3 0 1 1 16 28.3zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.9c.2.2 2.8 4.3 6.8 5.9 1 .4 1.8.6 2.4.8 1 .3 1.9.3 2.6.2.8-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+  </svg>
+
+</a>
+
+<!-- VISUALIZAÇÃO AMPLIADA DAS FOTOS -->
+
+<div class="lightbox" id="lightbox"
+  role="dialog" aria-modal="true"
+  aria-label="Visualização da foto">
+  <button class="lightbox-close"
+    id="closeLightbox"
+    aria-label="Fechar foto">×</button>
+  <img id="lightboxImage" alt="Foto ampliada do hotel">
+</div>
+
+<script>
+
+/* CONFIGURAÇÃO */
+
+const WHATSAPP = "5538999831112";
+
+/* ANO AUTOMÁTICO */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* MENU MOBILE */
+
+const menuToggle = document.getElementById("menuToggle");
+const navlinks = document.getElementById("navlinks");
+
+menuToggle.addEventListener("click", () => {
+  const active = navlinks.classList.toggle("active");
+
+  menuToggle.setAttribute("aria-expanded", String(active));
+  menuToggle.textContent = active ? "×" : "☰";
+});
+
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* CARREGAMENTO DAS FOTOS */
+
+document.querySelectorAll(".image-frame").forEach(frame => {
+  const img = frame.querySelector("img");
+  if (!img) return;
+
+  const markLoaded = () => {
+    frame.classList.add("has-image");
+  };
+
+  const markError = () => {
+    frame.classList.remove("has-image");
+  };
+
+  img.addEventListener("load", markLoaded);
+  img.addEventListener("error", markError);
+
+  if (img.complete) {
+    if (img.naturalWidth > 0) markLoaded();
+    else markError();
+  }
+});
+
+/* GALERIA AMPLIADA */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
+
+function fecharFoto() {
+  lightbox.classList.remove("open");
+  lightboxImage.removeAttribute("src");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+
+    if (!img || !img.naturalWidth) return;
+
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt;
+
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+closeLightbox.addEventListener("click", fecharFoto);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) fecharFoto();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") fecharFoto();
+});
+
+/* RESERVA VIA WHATSAPP */
+
+const bookingForm = document.getElementById("bookingForm");
+const entrada = document.getElementById("entrada");
+const saida = document.getElementById("saida");
+
+function dataLocalISO(date) {
+  const ano = date.getFullYear();
+  const mes = String(date.getMonth() + 1).padStart(2, "0");
+  const dia = String(date.getDate()).padStart(2, "0");
+  return `${ano}-${mes}-${dia}`;
+}
+
+const hoje = dataLocalISO(new Date());
+entrada.min = hoje;
+saida.min = hoje;
+
+entrada.addEventListener("change", () => {
+  if (!entrada.value) return;
+
+  const partes = entrada.value.split("-").map(Number);
+  const proximoDia = new Date(
+    partes[0], partes[1] - 1, partes[2] + 1
+  );
+
+  const minimoSaida = dataLocalISO(proximoDia);
+  saida.min = minimoSaida;
+
+  if (saida.value && saida.value < minimoSaida) {
+    saida.value = "";
+  }
+});
+
+function formatarData(valor) {
+  const [ano, mes, dia] = valor.split("-");
+  return `${dia}/${mes}/${ano}`;
+}
+
+bookingForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const dataEntrada = entrada.value;
+  const dataSaida = saida.value;
+
+  const adultos = document.getElementById("adultos").value;
+  const criancas = document.getElementById("criancas").value;
+
+  if (!nome || !dataEntrada || !dataSaida) {
+    alert("Preencha todos os campos obrigatórios.");
+    return;
+  }
+
+  if (dataEntrada < dataLocalISO(new Date())) {
+    alert("Selecione uma data de entrada válida.");
+    return;
+  }
+
+  if (dataSaida <= dataEntrada) {
+    alert("A saída deve ser posterior à entrada.");
+    return;
+  }
+
+  const mensagem =
+    `Olá! Gostaria de consultar uma hospedagem no Hotel Fazenda Lagoão.\n\n` +
+    `Nome: ${nome}\n` +
+    `Check-in: ${formatarData(dataEntrada)}\n` +
+    `Check-out: ${formatarData(dataSaida)}\n` +
+    `Adultos: ${adultos}\n` +
+    `Crianças: ${criancas}\n\n` +
+    `Poderiam informar a disponibilidade e os valores, por favor?`;
+
+  const url =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
+</script>
+
+<!--
+=============================================
+FOTOS DO HOTEL
+=============================================
+
+Crie uma pasta chamada: fotos
+
+Envie as imagens com os nomes abaixo:
+
+fotos/logo.png
+fotos/capa.jpg
+fotos/hotel.jpg
+fotos/quarto1.jpg
+fotos/quarto2.jpg
+fotos/piscina.jpg
+fotos/natureza.jpg
+fotos/gastronomia.jpg
+fotos/cachoeira.jpg
+fotos/experiencias.jpg
+fotos/eventos.jpg
+fotos/vista.jpg
+
+Mantenha index.html na raiz do repositório.
+
+As fotos aparecerão automaticamente quando
+os arquivos estiverem nos caminhos indicados.
+
+O formulário abre o WhatsApp e não confirma
+reservas automaticamente.
+
+=============================================
+-->
+
+</body>
+</html>
